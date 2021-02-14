@@ -20,7 +20,7 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
 ) # Enable logging
 
-BOT = Bot("1525485337:AAFpNpCDUIoiUSzAVZO21fA_Buwkgxqgov8")
+BOT = Bot("TOKEN")
 logger = logging.getLogger(__name__)
 BUTTON, QUESTION, QUESTION1, QUESTION2, ASSIST, ASSIST1, ASSIST2 = range(7)
 
@@ -161,11 +161,8 @@ def cancel(update: Update, context: CallbackContext) -> int:
 
 
 def main():
-    # Bot1
-    updater = Updater("1525485337:AAFpNpCDUIoiUSzAVZO21fA_Buwkgxqgov8")
+    updater = Updater("TOKEN")
 
-    # Bot2
-    # updater = Updater("1610393555:AAGTh2dLH2sSgV6Al5NfMqT8mWSShfH0BAw")
     dispatcher = updater.dispatcher
 
     conv_handler = ConversationHandler(
