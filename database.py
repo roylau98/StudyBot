@@ -144,18 +144,4 @@ class DataBase:
 
 if __name__ == '__main__':
     db = DataBase("questions.db")
-    db.add_questions("-", "How to find depth of binary tree", "CZ1107")
-    db.add_questions("-", "How to add new nodes", "CZ1107")
-    db.add_questions("-", "How to delete nodes not used", "CZ1107")
-    db.add_questions("-", "How to get all grandchildren nodes in BST", "CZ1107")
-
-    db.add_questions("-", "How to find determinants", "CZ1104")
-    db.add_questions("-", "What is the standard matrix of transformation", "CZ1104")
-    db.add_questions("-", "What is the N(A) and C(A) of a matrix", "CZ1104")
-    db.add_questions("-", "What are free and independent variables", "CZ1104")
-
-    db.add_questions("-", "How to do nested subroutines.", "CZ1106")
-    db.add_questions("-", "Why do we use RRX and LSR instructions.", "CZ1106")
-    db.add_questions("-", "What is the link register used for.", "CZ1106")
-    db.add_questions("-", "Why is the PC always 8 bytes ahead?", "CZ1106")
     db.close_connection()
