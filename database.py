@@ -7,7 +7,7 @@ class DataBase:
         self.connect()
         self.setup()
 
-    def connect(self):
+    def connect(self) -> None:
         """
         connects to the sqlite3 database, and create the cursor class
         :return: NIL
@@ -15,14 +15,14 @@ class DataBase:
         self.connection = sqlite3.connect(self.database, check_same_thread=False)
         self.cursor = self.connection.cursor()
 
-    def close_connection(self):
+    def close_connection(self) -> None:
         """
         closes the sqlite3 database connection
         :return: NIL
         """
         self.connection.close()
 
-    def setup(self):
+    def setup(self) -> None:
         """
         setups the database, checking if the table exists, if not creates it
         :return: NIL
@@ -36,7 +36,7 @@ class DataBase:
         self.cursor.execute(sql_command2)
         self.connection.commit()
 
-    def add_questions(self, chat_id: str, question: str, mods: str):
+    def add_questions(self, chat_id: str, question: str, mods: str) -> None:
         """
         adds questions into the database, categorised by the mods
         :param question: string
@@ -49,7 +49,7 @@ class DataBase:
         self.cursor.execute(sql_command, data)
         self.connection.commit()
 
-    def add_answer(self, question: str, answer: str):
+    def add_answer(self, question: str, answer: str) -> None:
         """
         search db for the question using exact string matching and add in the answer,
         update limit is 1 since only one question has exact string matching
@@ -92,7 +92,7 @@ class DataBase:
 
         return question_dict
 
-    def add_users(self, telegramHandle: str, mods: str):
+    def add_users(self, telegramHandle: str, mods: str) -> None:
         """
         add users in table users, with their telegram handle and mods of the mods they took
         creates a new row each time
@@ -105,7 +105,7 @@ class DataBase:
         self.cursor.execute(sql_command, data)
         self.connection.commit()
 
-    def delete_mods(self, telegramHandle: str, mods: str):
+    def delete_mods(self, telegramHandle: str, mods: str) -> None:
         """
         delete mods tied to telegram handle if students are not taking the mod anymore
         :param telegramHandle: string
@@ -118,7 +118,7 @@ class DataBase:
         self.cursor.execute(sql_command, data)
         self.connection.commit()
 
-    def delete_all_users(self, telegramHandle: str):
+    def delete_all_users(self, telegramHandle: str) -> None:
         """
         used if user wishes to erase all data from database
         :param telegramHandle: string
